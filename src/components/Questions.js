@@ -41,30 +41,36 @@ export default function Questions({ data }) {
   }
   const currentQuestion = tenQuestion[currentQuestionIndex];
   return (
+    <div class="main">
     <div class="trivia">
       <p>
         Questions {currentQuestionIndex + 1}/{tenQuestion.length}
       </p>
       {currentQuestion ? (
         <div>
-          <p>{currentQuestion.question}</p>
-          <ul>
+            <div>
+          <h1>{currentQuestion.question}</h1>
+          <ul class="answer-options">
             {Object.entries(currentQuestion.choices).map(([key, choice]) => (
               <li key={`choice-${currentQuestion.id}-${key}`}>
-                <button onClick={()=>handleChoiceClick(key)}>
-                  {key}: {choice}
-                </button>
+                <div onClick={()=>handleChoiceClick(key)} class="answer-choices">
+                 {choice}
+                </div>
               </li>
             ))}
           </ul>
+       </div>
+       <div class="score">
           {score && <p>{score}</p>}
           <button onClick={handleNextQuestion} disabled={!answer[currentQuestion.id]}>
             {currentQuestionIndex<tenQuestion.length-1? "Next Question":"Submit"}
           </button>
         </div>
+        </div>
       ) : (
         <div>Loading...</div>
       )}
+    </div>
     </div>
   );
 }
