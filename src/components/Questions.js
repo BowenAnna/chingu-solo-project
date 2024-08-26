@@ -3,10 +3,8 @@ import { useState } from "react";
 
 export default function Questions({ data }) {
   const [answer, setAnswer] = useState({});
-  const [result, setResult] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const tenQuestion = data.slice(0, 10);
-
   const [score, setScore]=useState(null);
 
   const handleChoiceClick = (choiceKey)=>{
