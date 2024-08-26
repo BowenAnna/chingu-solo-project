@@ -4,6 +4,7 @@ import Questions from './components/Questions';
 import Home from './components/Home'; // Assuming you have a Home component
 import Footer from './components/Footer';
 import Nav from './components/Nav';
+import './App.css'
 
 const App = () => {
   const [data, setData] = useState([]);

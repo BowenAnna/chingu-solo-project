@@ -41,7 +41,7 @@ export default function Questions({ data }) {
   }
   const currentQuestion = tenQuestion[currentQuestionIndex];
   return (
-    <div>
+    <div class="trivia">
       <p>
         Questions {currentQuestionIndex + 1}/{tenQuestion.length}
       </p>

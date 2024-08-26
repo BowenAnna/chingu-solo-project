@@ -1,3 +1,31 @@
 .App {
   text-align: center;
 }
+
+.nav-bar{
+  display: flex;
+  height: 60px;
+  background-color: Black;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 20px;
+}
+ul{
+  list-style-type: none;
+}
+.nav-bar-ul{
+  display: flex;
+}
+
+li{
+ padding: 0 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.trivia{
+  text-align: center;
+}
