@@ -3,6 +3,9 @@
   /* margin: 0;
   padding: 0; */
 }
+body{
+  background-image: url("../images/background.webp");
+}
 
 .nav-bar, .footer{
   display: flex;
@@ -28,7 +31,8 @@ a{
   color: white;
 }
 .main{
-  height: 77vh;
+  height: 90vh;
+ 
 }
 .trivia {
   border: 1px solid grey;
@@ -37,7 +41,7 @@ a{
   max-width: 600px;
   padding: 40px;
   margin: 50px auto;
-  
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,4 +116,12 @@ h1{font-size: 1em;}
     width: 100%;
     font-size: 0.9rem;
   }
+}
+
+.main-home{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
