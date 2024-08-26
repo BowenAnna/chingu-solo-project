@@ -18,6 +18,26 @@ export default function Questions({ data }) {
     else{
         setScore("Try again next time.")
     }
+  };
+
+  const handleNextQuestion = ()=>{
+    setScore(null);
+    if(currentQuestionIndex < tenQuestion.length-1){
+        setCurrentQuestionIndex(previuosIndex => previuosIndex+1);
+    }
+    else{
+        handleSubmit();
+    }
+  };
+
+  const handleSubmit=()=>{
+    let count = 0;
+    tenQuestion.forEach(question=>{
+        if(answer[question.id]===question.answer){
+            count++;
+        }
+    })
+    setScore(`You got ${count} out of 10 correct!`)
   }
   const currentQuestion = tenQuestion[currentQuestionIndex];
   return (
@@ -38,6 +58,9 @@ export default function Questions({ data }) {
             ))}
           </ul>
           {score && <p>{score}</p>}
+          <button onClick={handleNextQuestion} disabled={!answer[currentQuestion.id]}>
+            {currentQuestionIndex<tenQuestion.length-1? "Next Question":"Submit"}
+          </button>
         </div>
       ) : (
         <div>Loading...</div>
